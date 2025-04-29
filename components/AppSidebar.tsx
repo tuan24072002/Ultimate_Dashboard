@@ -78,20 +78,22 @@ const AppSidebar = () => {
             <SidebarSeparator className='mx-0' />
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Application</SidebarGroupLabel>
+                    <SidebarGroupLabel className='text-foreground/60'>Application</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild>
-                                        <Link href={item.url}>
+                                        <Link
+                                            href={item.url}
+                                            className='text-foreground'>
                                             <item.icon />
                                             <span>{item.title}</span>
                                         </Link>
                                     </SidebarMenuButton>
                                     {
                                         item.title === "Inbox" && (
-                                            <SidebarMenuBadge>24</SidebarMenuBadge>
+                                            <SidebarMenuBadge className='text-foreground'>24</SidebarMenuBadge>
                                         )
                                     }
                                 </SidebarMenuItem>
@@ -100,15 +102,15 @@ const AppSidebar = () => {
                     </SidebarGroupContent>
                 </SidebarGroup>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Projects</SidebarGroupLabel>
-                    <SidebarGroupAction>
+                    <SidebarGroupLabel className='text-foreground/60'>Projects</SidebarGroupLabel>
+                    <SidebarGroupAction className='text-foreground/60'>
                         <Plus /> <span className="sr-only">Add Project</span>
                     </SidebarGroupAction>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <Link href="/">
+                                    <Link href="/" className='text-foreground'>
                                         <Projector />
                                         See All Projects
                                     </Link>
@@ -116,7 +118,7 @@ const AppSidebar = () => {
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <Link href="/">
+                                    <Link href="/" className='text-foreground'>
                                         <Plus />
                                         Add Project
                                     </Link>
@@ -128,7 +130,7 @@ const AppSidebar = () => {
                 <Collapsible defaultOpen className="group/collapsible">
                     <SidebarGroup>
                         <SidebarGroupLabel asChild>
-                            <CollapsibleTrigger>
+                            <CollapsibleTrigger className='!text-foreground/60'>
                                 Collapsable Group
                                 <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                             </CollapsibleTrigger>
@@ -138,7 +140,7 @@ const AppSidebar = () => {
                                 <SidebarMenu>
                                     <SidebarMenuItem>
                                         <SidebarMenuButton asChild>
-                                            <Link href="/">
+                                            <Link href="/" className='text-foreground'>
                                                 <Projector />
                                                 See All Projects
                                             </Link>
@@ -146,7 +148,7 @@ const AppSidebar = () => {
                                     </SidebarMenuItem>
                                     <SidebarMenuItem>
                                         <SidebarMenuButton asChild>
-                                            <Link href="/">
+                                            <Link href="/" className='text-foreground'>
                                                 <Plus />
                                                 Add Project
                                             </Link>
@@ -158,12 +160,12 @@ const AppSidebar = () => {
                     </SidebarGroup>
                 </Collapsible>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
+                    <SidebarGroupLabel className='text-foreground/60'>Nested Items</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <Link href="/">
+                                    <Link href="/" className='text-foreground'>
                                         <Projector />
                                         See All Projects
                                     </Link>
@@ -171,16 +173,18 @@ const AppSidebar = () => {
                                 <SidebarMenuSub>
                                     <SidebarMenuSubItem>
                                         <SidebarMenuSubButton asChild>
-                                            <Link href={"/"}>
-                                                <Plus />
+                                            <Link href={"/"} className='!text-foreground'>
+                                                <Plus className='!text-foreground' />
                                                 Add Project
                                             </Link>
                                         </SidebarMenuSubButton>
                                     </SidebarMenuSubItem>
                                     <SidebarMenuSubItem>
                                         <SidebarMenuSubButton asChild>
-                                            <Link href={"/"}>
-                                                <Plus />
+                                            <Link
+                                                href={"/"}
+                                                className='!text-foreground'>
+                                                <Plus className='!text-foreground' />
                                                 Add Category
                                             </Link>
                                         </SidebarMenuSubButton>
